@@ -1,0 +1,19 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Posttype extends Model
+{
+    public $timestamps = true;
+    protected $table = 'posttypes';
+
+    protected $fillable = ['name','user_id'];
+
+
+    public function post()
+    {
+    	return $this->hasMany('App\Post');
+    }
+}
