@@ -20,6 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->string('keyword');
             $table->string('description');
             $table->integer('parent_id');
+            $table->integer('hassub');
             $table->integer('status');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
