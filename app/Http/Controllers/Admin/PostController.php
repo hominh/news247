@@ -124,7 +124,17 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        
+        $tags = DB::table('tags')
+                ->join('post_tags','tags.id','=','post_tags.tag_id')
+                ->select('tags.name')
+                ->where('post_tags.post_id','=',$id)
+                ->get();
+        $strTag = "";
+        foreach($tags as $tag) {
+            $strTag.= $tag->name.",";
+
+        }
+        $strTag = substr($strTag,0,-1);
         $data = DB::table('posts')
                     ->leftJoin('categories','posts.category_id','=','categories.id')
                     ->leftJoin('posttypes','posts.posttype_id','=','posttypes.id')
@@ -150,14 +160,12 @@ class PostController extends Controller
                         ->select('posttypes.id','posttypes.name')
                         ->where('id','<>',$data[0]->pid)
                         ->get();
-        
+
         $otherCategory = DB::table('categories')
                         ->select('categories.id','categories.name')
                         ->where('id','<>',$data[0]->cid)
                         ->get();
-        
-
-        return view('admin.post.edit',compact('data','currentNameStatus','otherStatus','otherNameStatus','otherPostType','otherCategory'));
+        return view('admin.post.edit',compact('data','currentNameStatus','otherStatus','otherNameStatus','otherPostType','otherCategory','strTag'));
     }
 
     /**
@@ -169,7 +177,52 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+           'name' => 'required|min:5',
+           'content' => 'required|min:5'
+        ]);
+        DB::table('post_tags')->where('post_id', '=', $id)->delete();
+        $tag = $request->tag;
+        if($tag != "" || $tag != NULL) {
+            $tags = explode(",", $tag);
+            foreach ($tags as $t) {
+                $checkExistTag = DB::table('tags')->select('id','name')->orderBy('id','DESC')->where('tags.name',$t)->get();
+                if(count($checkExistTag) <= 0) { //If don't have tag
+                    $tagObj = new Tag;
+                    $tagObj->name = $t;
+                    $tagObj->alias = changeTitle($t);
+                    $tagObj->save();
+                    $idTag = $tagObj->id;
+                }
+                else { //If have tag
+                    $checkexistTag = DB::table('tags')->select('id','name')->orderBy('id','DESC')->where('tags.name',$t)->get();
+                    $idTag = $checkexistTag[0]->id;
+                }
+                $post_tagObj = new Post_Tag;
+                $post_tagObj->post_id = $id;
+                $post_tagObj->tag_id = $idTag;
+                $post_tagObj->save();
+            }
+        }
+
+        $post = Post::find($id);
+        $post->name = $request->name;
+        $post->alias = changeTitle($request->name);
+        $post->intro = $request->intro;
+        $post->title = $request->title;
+        $post->keyword = $request->keyword;
+        $post->description = $request->description;
+        $post->content = $request->content;
+        $post->posttype_id = $request->posttype;
+        $post->status = $request->status;
+        $post->category_id = $request->category;
+        if($request->image != "") {
+            $post->image = $request->image;
+        }
+
+        $post->save();
+        return redirect()->route('admin.post.list');
+
     }
 
     /**

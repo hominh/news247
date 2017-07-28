@@ -29,7 +29,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label required">Intro</label>
-                                <input type="text" class="form-control" placeholder="Name" name="name" value="{!! old('intro',isset($data) ? $data[0]->intro:null ) !!}">
+                                <input type="text" class="form-control" placeholder="Name" name="intro" value="{!! old('intro',isset($data) ? $data[0]->intro:null ) !!}">
                             </div>
                             <div class="form-group">
                                 <label for="">Content</label>
@@ -39,7 +39,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Tag</label>
-                                <input type="text" name="tag" class="form-control" id="" placeholder="Tag">
+                                <input type="text" name="tag" class="form-control" id="" placeholder="Tag" value="{!! old('strTag',isset($strTag) ? $strTag:null ) !!}">
                             </div>
                             <div class="form-group">
                               <label class="">Image</label>
@@ -48,11 +48,11 @@
                                     <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
                                       <i class="fa fa-picture-o"></i> Choose
                                     </a>
-                                        
+
                                      <a href="javascript:void(0)" type="button" id="delImagePost" class="btn btn-primary"><i class="fa fa-times"></i>Delete image</a>
                                   </span>
                                   <input id="thumbnail" class="form-control" type="text" name="image" value="{!! old('intro',isset($data) ? $data[0]->image:null ) !!}">
-                                 
+
                                 </div>
                                 <img id="holder" style="margin-top:15px;max-height:100px;" src="{!! asset($data[0]->image)  !!}" idHinh="{!! $data[0]->postid !!}" id="{!! $data[0]->postid !!}">
 

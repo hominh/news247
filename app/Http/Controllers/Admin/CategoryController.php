@@ -57,6 +57,7 @@ class CategoryController extends Controller
            //'value' => 'required'
         ]);
 
+        $hassub = 1;
         $category = new Category;
         $category->name = $request->name;
         $category->alias = changeTitle($request->name);
@@ -66,6 +67,13 @@ class CategoryController extends Controller
         $category->description = $request->description;
         $category->status = $request->status;
         $category->user_id = Auth::user()->id;
+        if($request->parent != 0) {
+            $parentCategory = Category::find($request->parent);
+            $parentCategory->hassub = $hassub;
+            $parentCategory->save();
+        }
+
+        $category->hassub = 0;
         $category->save();
         return redirect()->route('admin.category.list');
     }
@@ -162,6 +170,6 @@ class CategoryController extends Controller
             echo "'
             </script>";
         }
-        
+
     }
 }

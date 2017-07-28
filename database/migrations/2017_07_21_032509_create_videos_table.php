@@ -20,6 +20,7 @@ class CreateVideosTable extends Migration
             $table->string('description');
             $table->string('keyword');
             $table->string('url');
+            $table->string('thumb');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

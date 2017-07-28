@@ -98,7 +98,7 @@
 							<li>
 								<div class="tweet-text">
 								<span>About 13 days ago</span>
-								Please, Wait for the next version of our templates to update #Joomla 3.7 
+								Please, Wait for the next version of our templates to update #Joomla 3.7
 								<a href="#">https://t.co/LlEv8HgokN</a>
 								</div>
 							</li>
@@ -112,7 +112,7 @@
 							<li>
 								<div class="tweet-text">
 								<span>About 1 month ago</span>
-								Please, Wait for the next version of our templates to update #Joomla 3.7 
+								Please, Wait for the next version of our templates to update #Joomla 3.7
 								<a href="#">https://t.co/LlEv8HgokN</a>
 								</div>
 							</li>
@@ -136,3 +136,30 @@
 			</div>
 		</div>
 	</footer>
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<div class="copyright-info">
+						<span>Copyright © 2017 News247 All Rights Reserved. Designed By Tripples</span>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div class="footer-menu">
+						<ul class="nav unstyled">
+							<li><a href="#">Site Terms</a></li>
+							<li><a href="#">Privacy</a></li>
+							<li><a href="#">Advertisement</a></li>
+							<li><a href="#">Cookies Policy</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
+				<button class="btn btn-primary" title="Back to Top">
+					<i class="fa fa-angle-up"></i>
+				</button>
+			</div>
+		</div>
+	</div>
