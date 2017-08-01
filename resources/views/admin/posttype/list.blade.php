@@ -9,7 +9,7 @@
 					</div>
 					<div class="tools">
 						<div class="dt-buttons">
-						<a class="dt-button buttons-print btn default" tabindex="0" aria-controls="sample_2" href="#"><span>Add posttype</span></a>
+						<a class="dt-button buttons-print btn default" tabindex="0" aria-controls="sample_2" href="{!! route('admin.posttype.create') !!}"><span>Add posttype</span></a>
 						<a class="dt-button buttons-pdf buttons-html5 btn default" tabindex="0" aria-controls="sample_2" href="#"><span>PDF</span></a><a class="dt-button buttons-excel buttons-html5 btn default" tabindex="0" aria-controls="sample_2" href="#"><span>Excel</span></a><a class="dt-button buttons-csv buttons-html5 btn default" tabindex="0" aria-controls="sample_2" href="#"><span>CSV</span></a><a class="dt-button btn default" tabindex="0" aria-controls="sample_2" href="#"><span>Reload</span></a></div>
 					</div>
 				</div>
