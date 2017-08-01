@@ -13,8 +13,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $parent_categories = DB::table('categories')->select('id','name','alias','parent_id','hassub')->where('parent_id',0)->get();
-        $sub_categories = DB::table('categories')->select('id','name','alias','parent_id','hassub')->where('parent_id','<>',0)->get();
+        $parent_categories = DB::table('categories')->select('id','name','alias','parent_id','hassub')
+                            ->where([
+                                ['parent_id','=',0],
+                                ['status','=',1]
+                            ])
+                            ->get();
+        $sub_categories = DB::table('categories')->select('id','name','alias','parent_id','hassub')
+                            ->where([
+                                ['parent_id','<>',0],
+                                ['status','=',1]
+                            ])
+                            ->get();
         $parent_categories=array_map(function($item){
             return (array) $item;
         },$parent_categories);

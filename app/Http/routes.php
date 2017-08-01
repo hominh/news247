@@ -54,6 +54,16 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('delImg/{id}',['as'=>'admin.post.delImg','uses'=>'Admin\PostController@getDelImg']);
     });
 
+    Route::group(['prefix'=>'video'],function(){
+        Route::get('list',['as'=>'admin.video.list','uses'=>'Admin\VideoController@index']);
+        Route::get('create',['as'=>'admin.video.create','uses'=>'Admin\VideoController@create']);
+        Route::post('store',['as'=>'admin.video.store','uses'=>'Admin\VideoController@store']);
+        Route::get('delete/{id}',['as'=>'admin.video.delete','uses'=>'Admin\VideoController@destroy']);
+        Route::get('edit/{id}',['as'=>'admin.video.edit','uses'=>'Admin\VideoController@edit']);
+        Route::post('update/{id}',['as'=>'admin.video.update','uses'=>'Admin\VideoController@update']);
+        Route::get('delImg/{id}',['as'=>'admin.video.delImg','uses'=>'Admin\VideoController@getDelImg']);
+    });
+
 });
 
 Route::get('/', 'HomeController@index');

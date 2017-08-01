@@ -5,7 +5,7 @@
 			<div class="portlet box green">
 				<div class="portlet-title">
 					<div class="caption">
-						<i class="fa fa-globe"></i>Configs 
+						<i class="fa fa-globe"></i>Configs
 					</div>
 					<div class="tools">
 						<div class="dt-buttons">
@@ -14,8 +14,8 @@
 					</div>
 				</div>
 				<div class="portlet-body">
-					
-					<table class="table table-striped table-bordered table-hover" id="sample_3">
+
+					<table class="table table-striped table-bordered table-hover" id="">
 						<thead>
 							<tr>
 								<th> STT </th>
@@ -47,8 +47,6 @@
 			</div>
 		</div>
 	</div>
-	
+
 
 @endsection()
-
-
