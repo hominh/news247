@@ -12,7 +12,7 @@
 									<div class="post-content">
 										<a class="post-cat" href="#">{!! $item->cname !!}</a>
 										<h2 class="post-title title-extra-large"><a href="#">{!! $item->intro !!}</a></h2>
-										<span class="post-date">{!! $item->created_at !!}</span>
+										<span class="post-date">{!!  Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('Y.m.d')  !!}</span>
 									</div>
 								</div>
 							</div>
@@ -31,7 +31,7 @@
 						 			<h2 class="post-title title-large">
 						 				<a href="#">{!! $hotpost[0]->name !!}</a>
 						 			</h2>
-						 			<span class="post-date">{!! $hotpost[0]->created_at !!}</span>
+						 			<span class="post-date">{!! Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('Y.m.d') !!}</span>
 					 			</div><!-- Post content end -->
 							</div><!-- Post Overaly end -->
 						</div><!-- Col end -->
@@ -66,174 +66,30 @@
 					<div class="latest-news block color-red">
 						<h3 class="block-title"><span>Latest News</span></h3>
 						<div id="latest-news-slide" class="owl-carousel owl-theme latest-news-slide">
+							@foreach($lastestpost as $item)
 							<div class="item">
 								<ul class="list-post">
 									<li class="clearfix">
-										<div class="post-block-style clearfix">
-											<div class="post-thumb">
-												<a href="#"><img class="img-responsive" src="images/news/lifestyle/health5.jpg" alt="" /></a>
-											</div>
-											<a class="post-cat" href="#">Health</a>
-											<div class="post-content">
-									 			<h2 class="post-title title-medium">
-									 				<a href="#">Netcix cuts out the chill with an integrated...</a>
-									 			</h2>
-									 			<div class="post-meta">
-									 				<span class="post-author"><a href="#">John Doe</a></span>
-									 				<span class="post-date">Feb 19, 2017</span>
-									 			</div>
-								 			</div><!-- Post content end -->
-										</div><!-- Post Block style end -->
-									</li><!-- Li end -->
-
-									<div class="gap-30"></div>
-
-									<li class="clearfix">
-										<div class="post-block-style clearfix">
-											<div class="post-thumb">
-												<a href="#"><img class="img-responsive" src="images/news/lifestyle/travel4.jpg" alt="" /></a>
-											</div>
-											<a class="post-cat" href="#">Travel</a>
-											<div class="post-content">
-									 			<h2 class="post-title title-medium">
-									 				<a href="#">19 incredible photos from Disney's 'Star Wars…</a>
-									 			</h2>
-									 			<div class="post-meta">
-									 				<span class="post-author"><a href="#">John Doe</a></span>
-									 				<span class="post-date">Mar 09, 2017</span>
-									 			</div>
-								 			</div><!-- Post content end -->
-										</div><!-- Post Block style end -->
-									</li><!-- Li end -->
-								</ul><!-- List post 1 end -->
-
-							</div><!-- Item 1 end -->
-							<div class="item">
-								<ul class="list-post">
-									<li class="clearfix">
-										<div class="post-block-style clearfix">
-											<div class="post-thumb">
-												<a href="#"><img class="img-responsive" src="images/news/lifestyle/health5.jpg" alt="" /></a>
-											</div>
-											<a class="post-cat" href="#">Health</a>
-											<div class="post-content">
-									 			<h2 class="post-title title-medium">
-									 				<a href="#">Netcix cuts out the chill with an integrated...</a>
-									 			</h2>
-									 			<div class="post-meta">
-									 				<span class="post-author"><a href="#">John Doe</a></span>
-									 				<span class="post-date">Feb 19, 2017</span>
-									 			</div>
-								 			</div><!-- Post content end -->
-										</div><!-- Post Block style end -->
-									</li><!-- Li end -->
-
-									<div class="gap-30"></div>
-
-									<li class="clearfix">
-										<div class="post-block-style clearfix">
-											<div class="post-thumb">
-												<a href="#"><img class="img-responsive" src="images/news/lifestyle/travel4.jpg" alt="" /></a>
-											</div>
-											<a class="post-cat" href="#">Travel</a>
-											<div class="post-content">
-									 			<h2 class="post-title title-medium">
-									 				<a href="#">19 incredible photos from Disney's 'Star Wars…</a>
-									 			</h2>
-									 			<div class="post-meta">
-									 				<span class="post-author"><a href="#">John Doe</a></span>
-									 				<span class="post-date">Mar 09, 2017</span>
-									 			</div>
-								 			</div><!-- Post content end -->
-										</div><!-- Post Block style end -->
-									</li><!-- Li end -->
-								</ul><!-- List post 1 end -->
-
-							</div><!-- Item 1 end -->
-							<div class="item">
-								<ul class="list-post">
-									<li class="clearfix">
-										<div class="post-block-style clearfix">
-											<div class="post-thumb">
-												<a href="#"><img class="img-responsive" src="images/news/lifestyle/health5.jpg" alt="" /></a>
-											</div>
-											<a class="post-cat" href="#">Health</a>
-											<div class="post-content">
-									 			<h2 class="post-title title-medium">
-									 				<a href="#">Netcix cuts out the chill with an integrated...</a>
-									 			</h2>
-									 			<div class="post-meta">
-									 				<span class="post-author"><a href="#">John Doe</a></span>
-									 				<span class="post-date">Feb 19, 2017</span>
-									 			</div>
-								 			</div><!-- Post content end -->
-										</div><!-- Post Block style end -->
-									</li><!-- Li end -->
-
-									<div class="gap-30"></div>
-
-									<li class="clearfix">
-										<div class="post-block-style clearfix">
-											<div class="post-thumb">
-												<a href="#"><img class="img-responsive" src="images/news/lifestyle/travel4.jpg" alt="" /></a>
-											</div>
-											<a class="post-cat" href="#">Travel</a>
-											<div class="post-content">
-									 			<h2 class="post-title title-medium">
-									 				<a href="#">19 incredible photos from Disney's 'Star Wars…</a>
-									 			</h2>
-									 			<div class="post-meta">
-									 				<span class="post-author"><a href="#">John Doe</a></span>
-									 				<span class="post-date">Mar 09, 2017</span>
-									 			</div>
-								 			</div><!-- Post content end -->
-										</div><!-- Post Block style end -->
-									</li><!-- Li end -->
-								</ul><!-- List post 1 end -->
-
-							</div><!-- Item 1 end -->
-							<div class="item">
-								<ul class="list-post">
-									<li class="clearfix">
-										<div class="post-block-style clearfix">
-											<div class="post-thumb">
-												<a href="#"><img class="img-responsive" src="images/news/lifestyle/health5.jpg" alt="" /></a>
-											</div>
-											<a class="post-cat" href="#">Health</a>
-											<div class="post-content">
-									 			<h2 class="post-title title-medium">
-									 				<a href="#">Netcix cuts out the chill with an integrated...</a>
-									 			</h2>
-									 			<div class="post-meta">
-									 				<span class="post-author"><a href="#">John Doe</a></span>
-									 				<span class="post-date">Feb 19, 2017</span>
-									 			</div>
-								 			</div><!-- Post content end -->
-										</div><!-- Post Block style end -->
-									</li><!-- Li end -->
-
-									<div class="gap-30"></div>
-
-									<li class="clearfix">
-										<div class="post-block-style clearfix">
-											<div class="post-thumb">
-												<a href="#"><img class="img-responsive" src="images/news/lifestyle/travel4.jpg" alt="" /></a>
-											</div>
-											<a class="post-cat" href="#">Travel</a>
-											<div class="post-content">
-									 			<h2 class="post-title title-medium">
-									 				<a href="#">19 incredible photos from Disney's 'Star Wars…</a>
-									 			</h2>
-									 			<div class="post-meta">
-									 				<span class="post-author"><a href="#">John Doe</a></span>
-									 				<span class="post-date">Mar 09, 2017</span>
-									 			</div>
-								 			</div><!-- Post content end -->
-										</div><!-- Post Block style end -->
-									</li><!-- Li end -->
-								</ul><!-- List post 1 end -->
-
-							</div><!-- Item 1 end -->
+											<div class="post-block-style clearfix">
+												<div class="post-thumb">
+													<a href="#"><img class="img-responsive" src="{!! $item->image !!}" alt="{!! $item->name !!}" /></a>
+												</div>
+												<a class="post-cat" href="#">{!! $item->cname !!}</a>
+												<div class="post-content">
+													<h2 class="post-title title-medium">
+														<a href="#">{!! $item->name !!}</a>
+													</h2>
+													<div class="post-meta">
+														<span class="post-author"><a href="#">{!! $item->uname !!}</a></span>
+														<span class="post-date">{!!  Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('Y.m.d') !!}</span>
+													</div>
+												</div><!-- Post content end -->
+											</div><!-- Post Block style end -->
+										</li><!-- Li end -->
+										<div class="gap-30"></div>
+								</ul>
+							</div>
+							@endforeach()
 						</div>
 					</div>
 					<div class="gap-50"></div>
@@ -241,93 +97,51 @@
 					<div class="featured-tab color-blue">
 						<h3 class="block-title"><span>Technology</span></h3>
 						<ul class="nav nav-tabs">
-							<li class="active">
-						  		<a class="animated fadeIn" href="#tab_a" data-toggle="tab">
-						  			<span class="tab-head">
-										<span class="tab-text-title">Gadgets</span>
+							<?php $stt = 0; ?>
+							@foreach($subcategories_tech as $item)
+							<?php $stt = $stt + 1; $class = ""; ?>
+							@if($stt == 1)
+								<li class="active">
+							@endif()
+							@if($stt > 1)
+								<li>
+							@endif()
+								<a class="animated fadeIn" href="#{!! $item->name !!}" data-toggle="tab">
+									<span class="tab-head">
+										<span class="tab-text-title">{!! $item->name !!}</span>
 									</span>
-						  		</a>
-						  	</li>
-							<li>
-							  	<a class="animated fadeIn" href="#tab_b" data-toggle="tab">
-							  		<span class="tab-head">
-										<span class="tab-text-title">Games</span>
-									</span>
-							  	</a>
+								</a>
 							</li>
-							<li>
-							  	<a class="animated fadeIn" href="#tab_c" data-toggle="tab">
-							  		<span class="tab-head">
-										<span class="tab-text-title">Robotics</span>
-									</span>
-							  	</a>
-							</li>
+							@endforeach()
 						</ul>
 						<div class="tab-content">
+							@if(count($gadgetposts) > 0)
+							<div class="tab-pane active animated fadeInRight" id="{!! $gadgetposts[0]->cname !!}">
+							@endif()
+							@if(count($gadgetposts) == 0)
 							<div class="tab-pane active animated fadeInRight" id="tab_a">
+							@endif()
 								<div class="row">
+									@foreach($gadgetposts as $item)
 									<div class="col-md-6 col-sm-6">
 										<div class="post-block-style clearfix">
 											<div class="post-thumb">
-												<a href="#">
-													<img class="img-responsive" src="images/news/tech/gadget1.jpg" alt="" />
-												</a>
+												<a href="#"><img class="img-responsive" src="{!! $item->image !!}" alt="{!! $item->name !!}" /></a>
 											</div>
-											<a class="post-cat" href="#">Gadgets</a>
+											<a class="post-cat" href="#">{!! $item->cname !!}</a>
 											<div class="post-content">
 												<h2 class="post-title">
-									 				<a href="#">The best MacBook Pro alternatives in 2017 for Apple users</a>
+									 				<a href="#">{!! $item->name !!}</a>
 									 			</h2>
 									 			<div class="post-meta">
-									 				<span class="post-author"><a href="#">John Doe</a></span>
-									 				<span class="post-date">Feb 24, 2017</span>
+									 				<span class="post-author"><a href="#">{!! $item->uname !!}</a></span>
+									 				<span class="post-date">{!! $item->created_at !!}</span></span>
 									 			</div>
-									 			<p>Lumbersexual meh sustainable Thundercats meditation kogi. Tilde Pitchfork vegan, gentrify minim elit semiotics non messenger bag Austin which roasted ...</p>
+									 			<p>{!! $item->intro !!}</p>
 											</div>
 										</div>
 									</div>
-									<div class="col-md-6 col-sm-6">
-										<div class="list-post-block">
-											<ul class="list-post">
-												<li class="clearfix">
-													<div class="post-block-style post-float clearfix">
-														<div class="post-thumb">
-															<a href="#">
-																<img class="img-responsive" src="images/news/tech/gadget2.jpg" alt="" />
-															</a>
-														</div><!-- Post thumb end -->
-
-														<div class="post-content">
-												 			<h2 class="post-title title-small">
-												 				<a href="#">Samsung Gear S3 review: A whimper, when smartwatches need a bang</a>
-												 			</h2>
-												 			<div class="post-meta">
-												 				<span class="post-date">Feb 13, 2017</span>
-												 			</div>
-											 			</div><!-- Post content end -->
-													</div><!-- Post block style end -->
-												</li><!-- Li 1 end -->
-												<li class="clearfix">
-													<div class="post-block-style post-float clearfix">
-														<div class="post-thumb">
-															<a href="#">
-																<img class="img-responsive" src="images/news/tech/gadget3.jpg" alt="" />
-															</a>
-														</div><!-- Post thumb end -->
-
-														<div class="post-content">
-												 			<h2 class="post-title title-small">
-												 				<a href="#">Panasonic's new Sumix CH7 an ultra portable filmmaker's dream</a>
-												 			</h2>
-												 			<div class="post-meta">
-												 				<span class="post-date">Jan 11, 2017</span>
-												 			</div>
-											 			</div><!-- Post content end -->
-													</div><!-- Post block style end -->
-												</li><!-- Li 2 end -->
-											</ul>
-										</div>
-									</div>
+									@endforeach()
 								</div>
 							</div>
 							<div class="tab-pane animated fadeInRight" id="tab_b">
@@ -453,23 +267,23 @@
 						</div>
 						<div class="widget color-default">
 							<h3 class="block-title"><span>Popular News</span></h3>
-							<div class="post-overaly-style clearfix">
-								<div class="post-thumb">
-									<a href="#">
-										<img class="img-responsive" src="images/news/lifestyle/health4.jpg" alt="">
-									</a>
-								</div>
+								<div class="post-overaly-style clearfix">
+									<div class="post-thumb">
+										<a href="#">
+											<img class="img-responsive" src="{!! $popularnews[0]->image !!}" alt="{!! $popularnews[0]->name !!}"  />
+										</a>
+									</div>
 
-								<div class="post-content">
-						 			<a class="post-cat" href="#">Health</a>
-						 			<h2 class="post-title">
-						 				<a href="#">Smart packs parking sensor tech and beeps when col…</a>
-						 			</h2>
-						 			<div class="post-meta">
-						 				<span class="post-date">Feb 06, 2017</span>
-						 			</div>
-					 			</div><!-- Post content end -->
-							</div>
+									<div class="post-content">
+							 			<a class="post-cat" href="#">{!! $popularnews[0]->cname !!}</a>
+							 			<h2 class="post-title">
+							 				<a href="#">{!! $popularnews[0]->name !!}</a>
+							 			</h2>
+							 			<div class="post-meta">
+							 				<span class="post-date">{!! $popularnews[0]->created_at !!}</span>
+							 			</div>
+						 			</div><!-- Post content end -->
+								</div>
 							<div class="list-post-block">
 								<ul class="list-post">
 									<li class="clearfix">
@@ -842,88 +656,57 @@
 					<h2 class="video-tab-title">Watch Now</h2>
 					<div class="col-md-7 pad-r-0">
 						<div class="tab-content">
-							<div class="tab-pane active animated fadeIn" id="video1">
-								<div class="post-overaly-style clearfix">
-								   <div class="post-thumb">
-										<img class="img-responsive" src="images/news/video/video4.jpg" alt="" />
-										<a class="popup" href="https://www.youtube.com/embed/XhveHKJWnOQ?autoplay=1&amp;loop=1">
-					                  <div class="video-icon">
-					                  	<i class="fa fa-play"></i>
-					               	</div>
-					            	</a>
-								   </div><!-- Post thumb end -->
-								   <div class="post-content">
-								      <a class="post-cat" href="#">Video</a>
-								      <h2 class="post-title">
-								         <a href="#">Is Running Good for You, Health Benefits of Morning Running</a>
-								      </h2>
-								   </div><!-- Post content end -->
-								</div><!-- Post Overaly Article end -->
-							</div><!--Tab pane 1 end-->
-							<div class="tab-pane animated fadeIn" id="video2">
-								<div class="post-overaly-style clearfix">
-								   <div class="post-thumb">
-								      <img class="img-responsive" src="images/news/video/video3.jpg" alt="" />
-										<a class="popup" href="https://www.youtube.com/embed/wJF5NXygL4k?autoplay=1&amp;loop=1">
-					                  <div class="video-icon">
-					                  	<i class="fa fa-play"></i>
-					               	</div>
-					            	</a>
-								   </div><!-- Post thumb end -->
-								   <div class="post-content">
-								      <a class="post-cat" href="#">Video</a>
-								      <h2 class="post-title title-medium">
-								         <a href="#">Breeze through 17 locations in Europe in this breathtaking video</a>
-								      </h2>
-								   </div><!-- Post content end -->
-								</div><!-- Post Overaly Article 2 end -->
-							</div><!--Tab pane 2 end-->
-							<div class="tab-pane animated fadeIn" id="video3">
-								<div class="post-overaly-style clearfix">
-								   <div class="post-thumb">
-								      <img class="img-responsive" src="images/news/video/video2.jpg" alt="" />
-										<a class="popup" href="https://www.youtube.com/embed/DQNDcxRo-2M?autoplay=1&amp;loop=1">
-					                  <div class="video-icon">
-					                  	<i class="fa fa-play"></i>
-					               	</div>
-					            	</a>
-								   </div><!-- Post thumb end -->
-								   <div class="post-content">
-								      <a class="post-cat" href="#">Video</a>
-								      <h2 class="post-title title-medium">
-								         <a href="#">TG G6 will have dual 13-megapixel cameras on the back</a>
-								      </h2>
-								   </div><!-- Post content end -->
-								</div><!-- Post Overaly Article 2 end -->
-							</div><!--Tab pane 2 end-->
+							<?php $stt = 0; ?>
+							@foreach($videos as $item)
+								<?php $stt = $stt + 1; $active = ""; ?>
+								@if($stt == 1)
+									<div class="tab-pane active animated fadeIn" id="video{!! $item->id !!}">
+								@endif()
+
+								@if($stt > 1)
+									<div class="tab-pane animated fadeIn" id="video{!! $item->id !!}">
+								@endif()
+									<div class="post-overaly-style clearfix">
+									   <div class="post-thumb">
+											<img class="img-responsive" src="{!! $item->thumb !!}" alt="{!! $item->name !!}"  />
+											<a class="popup" href="{!! $item->url !!}">
+						                  <div class="video-icon">
+						                  	<i class="fa fa-play"></i>
+						               	</div>
+						            	</a>
+									   </div><!-- Post thumb end -->
+									   <div class="post-content">
+									      <a class="post-cat" href="#">Video</a>
+									      <h2 class="post-title">
+									         <a href="#">{!! $item->name !!}</a>
+									      </h2>
+									   </div><!-- Post content end -->
+									</div><!-- Post Overaly Article end -->
+								</div>
+							@endforeach()
 						</div>
 					</div>
 					<div class="col-md-5 pad-l-0">
 						<ul class="nav nav-tabs">
-						  	<li class="active">
-						  		<a class="animated fadeIn" href="#video1" data-toggle="tab">
-						  			<div class="post-thumb">
-								        <img class="img-responsive" src="images/news/video/video4.jpg" alt="" />
-								   </div><!-- Post thumb end -->
-						  			<h3>Is Running Good for You, Health Benefits of Morning Running</h3>
-						  		</a>
-						  	</li>
-						  	<li>
-							  	<a class="animated fadeIn" href="#video2" data-toggle="tab">
-							  		<div class="post-thumb">
-								      <img class="img-responsive" src="images/news/video/video3.jpg" alt="" />
-								   </div><!-- Post thumb end -->
-						  			<h3>Breeze through 17 locations in Europe in this breathtaking video</h3>
-							  	</a>
-							</li>
-						 	<li>
-							  	<a class="animated fadeIn" href="#video3" data-toggle="tab">
-							  		<div class="post-thumb">
-								      <img class="img-responsive" src="images/news/video/video2.jpg" alt="" />
-								   </div><!-- Post thumb end -->
-						  			<h3>TG G6 will have dual 13-megapixel cameras on the back</h3>
-							  	</a>
-							</li>
+							<?php $stt = 0; ?>
+							@foreach($videos as $item)
+								<?php $stt = $stt + 1; ?>
+								<?php $active = ""; ?>	
+								@if($stt == 1)
+									<li class="active">
+								@endif()
+
+								@if($stt > 1)
+									<li>
+								@endif()
+										<a class="animated fadeIn" href="#video{!! $item->id !!}" data-toggle="tab">
+								  			<div class="post-thumb">
+										        <img class="img-responsive" src="{!! $item->thumb !!}" alt="{!! $item->name !!}"  />
+										   </div><!-- Post thumb end -->
+								  			<h3>{!! $item->name !!}</h3>
+								  		</a>
+									</li>
+							@endforeach()
 						</ul>
 					</div><!--Tab nav col end -->
 				</div>
@@ -935,68 +718,30 @@
 			<div class="row">
 				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 					<div class="more-news block color-default">
-						<h3 class="block-title"><span>More News</span></h3>
+						<h3 class="block-title"><span>Feature News</span></h3>
 						<div id="more-news-slide" class="owl-carousel owl-theme more-news-slide">
 							<div class="item">
-								<div class="post-block-style post-float-half clearfix">
-									<div class="post-thumb">
-										<a href="#">
-											<img class="img-responsive" src="images/news/video/video1.jpg" alt="" />
-										</a>
-									</div>
-									<a class="post-cat" href="#">Video</a>
-									<div class="post-content">
-							 			<h2 class="post-title">
-							 				<a href="#">KJerry's will sell food cream that tastes like your favorite video</a>
-							 			</h2>
-							 			<div class="post-meta">
-							 				<span class="post-author"><a href="#">John Doe</a></span>
-							 				<span class="post-date">Mar 29, 2017</span>
-							 			</div>
-							 			<p>Lumbersexual meh sustainable Thundercats meditation kogi. Tilde Pitchfork vegan, gentrify minim elit semiotics non messenger bag Austin which roasted ...</p>
-						 			</div><!-- Post content end -->
-								</div><!-- Post Block style 1 end -->
-								<div class="gap-30"></div>
-								<div class="post-block-style post-float-half clearfix">
-									<div class="post-thumb">
-										<a href="#">
-											<img class="img-responsive" src="images/news/tech/game5.jpg" alt="" />
-										</a>
-									</div>
-									<a class="post-cat" href="#">Games</a>
-									<div class="post-content">
-							 			<h2 class="post-title">
-							 				<a href="#">Oazer and Lacon bring eSport expertise to new PS4 controllers</a>
-							 			</h2>
-							 			<div class="post-meta">
-							 				<span class="post-author"><a href="#">John Doe</a></span>
-							 				<span class="post-date">Mar 27, 2017</span>
-							 			</div>
-							 			<p>Pityful a rethoric question ran over her cheek When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of he...</p>
-						 			</div><!-- Post content end -->
-								</div><!-- Post Block style 2 end -->
-
-								<div class="gap-30"></div>
-								<div class="post-block-style post-float-half clearfix">
-									<div class="post-thumb">
-										<a href="#">
-											<img class="img-responsive" src="images/news/tech/game5.jpg" alt="" />
-										</a>
-									</div>
-									<a class="post-cat" href="#">Games</a>
-									<div class="post-content">
-							 			<h2 class="post-title">
-							 				<a href="#">Oazer and Lacon bring eSport expertise to new PS4 controllers</a>
-							 			</h2>
-							 			<div class="post-meta">
-							 				<span class="post-author"><a href="#">John Doe</a></span>
-							 				<span class="post-date">Mar 27, 2017</span>
-							 			</div>
-							 			<p>Pityful a rethoric question ran over her cheek When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of he...</p>
-						 			</div><!-- Post content end -->
-								</div><!-- Post Block style 2 end -->
-
-								<div class="gap-30"></div>
+								@foreach($featureposts as $item)
+									<div class="post-block-style post-float-half clearfix">
+										<div class="post-thumb">
+											<a href="#">
+												<img class="img-responsive" src="{!! $item->image !!}" alt="{!! $item->name !!}"  />
+											</a>
+										</div>
+										<a class="post-cat" href="#">{!! $item->cname !!}</a>
+										<div class="post-content">
+								 			<h2 class="post-title">
+								 				<a href="#">{!! $item->name !!}</a>
+								 			</h2>
+								 			<div class="post-meta">
+								 				<span class="post-author"><a href="#">{!! $item->uname !!}</a></span>
+								 				<span class="post-date">{!! $item->created_at !!}</span>
+								 			</div>
+								 			<p>{!! $item->intro !!}</p>
+							 			</div><!-- Post content end -->
+									</div><!-- Post Block style 1 end -->
+									<div class="gap-30"></div>
+								@endforeach()
 							</div>
 						</div>
 					</div>
@@ -1007,106 +752,33 @@
 							<h3 class="block-title"><span>Latest Reviews</span></h3>
 							<div class="list-post-block">
 								<ul class="list-post review-post-list">
-									<li class="clearfix">
-										<div class="post-block-style post-float clearfix">
-											<div class="post-thumb">
-												<a href="#">
-													<img class="img-responsive" src="images/news/review/review1.jpg" alt="">
-												</a>
-											</div><!-- Post thumb end -->
+									@foreach($reviews as $item)
+										<li class="clearfix">
+											<div class="post-block-style post-float clearfix">
+												<div class="post-thumb">
+													<a href="#">
+														<img class="img-responsive" src="{!! $item->image !!}" alt="{!! $item->name !!}"  />
+													</a>
+												</div><!-- Post thumb end -->
 
-											<div class="post-content">
-									 			<h2 class="post-title">
-									 				<a href="#">Topical Resorts you need to know</a>
-									 			</h2>
-									 			<div class="post-meta">
-									 				<div class="review-stars">
-									 					<i class="fa fa-star"></i>
-									 					<i class="fa fa-star"></i>
-									 					<i class="fa fa-star"></i>
-									 					<i class="fa fa-star-half-o"></i>
-									 					<i class="fa fa-star-o"></i>
-									 				</div>
-									 			</div><!-- Post meta end -->
-								 			</div><!-- Post content end -->
-										</div><!-- Post block style end -->
-									</li><!-- Li 1 end -->
+												<div class="post-content">
+										 			<h2 class="post-title">
+										 				<a href="#">{!! $item->name !!}</a>
+										 			</h2>
+										 			<div class="post-meta">
+										 				<div class="review-stars">
+										 					<i class="fa fa-star"></i>
+										 					<i class="fa fa-star"></i>
+										 					<i class="fa fa-star"></i>
+										 					<i class="fa fa-star-half-o"></i>
+										 					<i class="fa fa-star-o"></i>
+										 				</div>
+										 			</div><!-- Post meta end -->
+									 			</div><!-- Post content end -->
+											</div><!-- Post block style end -->
+										</li><!-- Li 1 end -->
 
-									<li class="clearfix">
-										<div class="post-block-style post-float clearfix">
-											<div class="post-thumb">
-												<a href="#">
-													<img class="img-responsive" src="images/news/review/review2.jpg" alt="">
-												</a>
-											</div><!-- Post thumb end -->
-
-											<div class="post-content">
-									 			<h2 class="post-title">
-									 				<a href="#">Apple - MacBook Pro with Retina display</a>
-									 			</h2>
-									 			<div class="post-meta">
-									 				<div class="review-stars">
-									 					<i class="fa fa-star"></i>
-									 					<i class="fa fa-star"></i>
-									 					<i class="fa fa-star"></i>
-									 					<i class="fa fa-star"></i>
-									 					<i class="fa fa-star-half-o"></i>
-									 				</div>
-									 			</div>
-								 			</div><!-- Post content end -->
-										</div><!-- Post block style end -->
-									</li><!-- Li 2 end -->
-
-									<li class="clearfix">
-										<div class="post-block-style post-float clearfix">
-											<div class="post-thumb">
-												<a href="#">
-													<img class="img-responsive" src="images/news/review/review3.jpg" alt="">
-												</a>
-											</div><!-- Post thumb end -->
-
-											<div class="post-content">
-									 			<h2 class="post-title">
-									 				<a href="#">Asus ZenPad 3S 10 Z500M</a>
-									 			</h2>
-									 			<div class="post-meta">
-									 				<div class="review-stars">
-									 					<i class="fa fa-star"></i>
-									 					<i class="fa fa-star"></i>
-									 					<i class="fa fa-star"></i>
-									 					<i class="fa fa-star-o"></i>
-									 					<i class="fa fa-star-o"></i>
-									 				</div>
-									 			</div>
-								 			</div><!-- Post content end -->
-										</div><!-- Post block style end -->
-									</li><!-- Li 3 end -->
-
-									<li class="clearfix">
-										<div class="post-block-style post-float clearfix">
-											<div class="post-thumb">
-												<a href="#">
-													<img class="img-responsive" src="images/news/review/review4.jpg" alt="">
-												</a>
-											</div><!-- Post thumb end -->
-
-											<div class="post-content">
-									 			<h2 class="post-title">
-									 				<a href="#">Polar M600 GPS Smart Sports Watch</a>
-									 			</h2>
-									 			<div class="post-meta">
-									 				<div class="review-stars">
-									 					<i class="fa fa-star"></i>
-									 					<i class="fa fa-star"></i>
-									 					<i class="fa fa-star-half-o"></i>
-									 					<i class="fa fa-star-o"></i>
-									 					<i class="fa fa-star-o"></i>
-									 				</div>
-									 			</div>
-								 			</div><!-- Post content end -->
-										</div><!-- Post block style end -->
-									</li><!-- Li 4 end -->
-
+									@endforeach()
 								</ul><!-- List post end -->
 							</div>
 						</div>

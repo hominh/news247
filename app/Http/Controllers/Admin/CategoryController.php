@@ -53,8 +53,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:categories|min:5',
-           //'value' => 'required'
+            'name' => 'required|unique:categories|min:3',
+            'posttype' => 'required'
         ]);
 
         $hassub = 1;

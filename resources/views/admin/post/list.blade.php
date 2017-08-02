@@ -15,7 +15,7 @@
 				</div>
 				<div class="portlet-body">
 
-					<table class="table table-striped table-bordered table-hover" id="">
+					<table class="table table-striped table-bordered table-hover" id="sample_3">
 						<thead>
 							<tr>
 								<th> STT </th>
