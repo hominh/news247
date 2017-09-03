@@ -27,7 +27,7 @@ class HomeController extends Controller
         $featureposts = $this->getPostByPostType('Feature news',12);
         $reviews = $this->getPostByPostType('Review',50);
         $popularnews = $this->getPostByPostType('Popular news',50);
-        dd($popularnews);
+        //dd($popularnews);
 
         $gadgetposts = $this->getPostByCategory('Gadget',6);
         $gameposts = $this->getPostByCategory('Game',6);

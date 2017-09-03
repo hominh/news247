@@ -20,7 +20,7 @@ $(document).ready(function() {
 			data: {"_token":_token,"idPost":idPost,"urlImage":srcImage},
 			success: function (data) {
 				if(data == "ok") {
-					$("#"+id).remove();
+					$("#holder").remove();
 				}
 			}
 		});
@@ -40,7 +40,7 @@ $(document).ready(function() {
 			data: {"_token":_token,"idvideo":idvideo,"urlImage":srcimage},
 			success: function (data) {
 				if(data == "ok") {
-					$("#"+id).remove();
+					$("#holder").remove();
 				}
 			}
 		});
