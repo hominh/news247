@@ -9,7 +9,7 @@
 					</div>
 					<div class="tools">
 						<div class="dt-buttons">
-						<a class="dt-button buttons-print btn default" tabindex="0" aria-controls="sample_2" href="{!! route('admin.post.create') !!}"><span>Add config</span></a>
+						<a class="dt-button buttons-print btn default" tabindex="0" aria-controls="sample_2" href="{!! route('admin.config.create') !!}"><span>Add config</span></a>
 						<a class="dt-button buttons-pdf buttons-html5 btn default" tabindex="0" aria-controls="sample_2" href="#"><span>PDF</span></a><a class="dt-button buttons-excel buttons-html5 btn default" tabindex="0" aria-controls="sample_2" href="#"><span>Excel</span></a><a class="dt-button buttons-csv buttons-html5 btn default" tabindex="0" aria-controls="sample_2" href="#"><span>CSV</span></a><a class="dt-button btn default" tabindex="0" aria-controls="sample_2" href="#"><span>Reload</span></a></div>
 					</div>
 				</div>
@@ -19,8 +19,7 @@
 						<thead>
 							<tr>
 								<th> STT </th>
-								<th> Name </th>
-								<th> Value </th>
+								<th> Title </th>
 								<th> Created at </th>
 								<th> Created by </th>
 								<th> Edit </th>
@@ -33,8 +32,7 @@
                       	<?php $stt = $stt + 1; ?>
                       		<tr>
 								<td> {!! $stt !!} </td>
-								<td> {!! $item->cname !!} </td>
-								<td> {!! $item->value !!} </td>
+								<td> {!! $item->title !!} </td>
 								<td> {!! $item->created_at !!} </td>
 								<td> {!! $item->uname !!} </td>
 								<td> <a onclick="return confirmDelete('Are you sure Delete?')" href="{{ URL::route('admin.config.delete',$item->id) }}"> Delete</a> </td>
@@ -47,6 +45,4 @@
 			</div>
 		</div>
 	</div>
-
-
 @endsection()

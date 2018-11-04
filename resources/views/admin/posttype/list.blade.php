@@ -5,16 +5,16 @@
 			<div class="portlet box green">
 				<div class="portlet-title">
 					<div class="caption">
-						<i class="fa fa-globe"></i>Posttypes 
+						<i class="fa fa-globe"></i>Posttypes
 					</div>
 					<div class="tools">
 						<div class="dt-buttons">
-						<a class="dt-button buttons-print btn default" tabindex="0" aria-controls="sample_2" href="{!! route('admin.post.create') !!}"><span>Add posttype</span></a>
+						<a class="dt-button buttons-print btn default" tabindex="0" aria-controls="sample_2" href="{!! route('admin.posttype.create') !!}"><span>Add posttype</span></a>
 						<a class="dt-button buttons-pdf buttons-html5 btn default" tabindex="0" aria-controls="sample_2" href="#"><span>PDF</span></a><a class="dt-button buttons-excel buttons-html5 btn default" tabindex="0" aria-controls="sample_2" href="#"><span>Excel</span></a><a class="dt-button buttons-csv buttons-html5 btn default" tabindex="0" aria-controls="sample_2" href="#"><span>CSV</span></a><a class="dt-button btn default" tabindex="0" aria-controls="sample_2" href="#"><span>Reload</span></a></div>
 					</div>
 				</div>
 				<div class="portlet-body">
-					
+
 					<table class="table table-striped table-bordered table-hover" id="sample_3">
 						<thead>
 							<tr>
@@ -45,8 +45,6 @@
 			</div>
 		</div>
 	</div>
-	
+
 
 @endsection()
-
-

@@ -9,5 +9,5 @@ class Config extends Model
     public $timestamps = true;
     protected $table = 'configs';
 
-    protected $fillable = ['name','value','user_id'];
+    protected $fillable = ['logo','title','description','keyword','address','email','skype','phone','user_id'];
 }

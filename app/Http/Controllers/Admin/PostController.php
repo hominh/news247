@@ -35,7 +35,7 @@ class PostController extends Controller
                     ->leftJoin('users','posts.user_id','=','users.id')
                     ->get();
 
-        return view('admin/post/list',compact('data'));
+        return view('admin/post/list',compact('data')); 
     }
 
     /**

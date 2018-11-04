@@ -26,7 +26,7 @@ class ConfigController extends Controller
     {
         $data = DB::table('configs')
             ->join('users','configs.user_id','=','users.id')
-            ->select('configs.id as id', 'configs.name as cname','configs.value','users.name as uname','configs.created_at')
+            ->select('configs.id as id', 'configs.title as title','users.name as uname','configs.created_at')
             ->get();
         return view('admin/config/list',compact('data'));
     }
@@ -50,24 +50,29 @@ class ConfigController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-           'name' => 'required',
+           'address' => 'required',
            //'value' => 'required'
         ]);
        $config = new Config;
-       $config->name = $request->name;
-
+       $config->address = $request->address;
+       $config->email = $request->email;
+       $config->skype = $request->skype;
+       $config->phone = $request->phone;
        $config->user_id = Auth::user()->id;
+       $config->title = $request->title;
+       $config->keyword = $request->keyword;
+       $config->description = $request->description;
 
        if(Input::file()) {
-            
+
             $imageTempName = $request->file('image')->getPathname();
             $imageName = $request->file('image')->getClientOriginalName();
             $path = public_path("images/logo/");
             $request->file('image')->move($path , $imageName);
-            $config->value = $imageName;
+            $config->logo = $imageName;
        }
        else {
-            $config->value = $request->value;
+            $config->logo = $request->value;
        }
        $config->save();
        return redirect()->route('admin.config.list')->with('message','Success');

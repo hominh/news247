@@ -24,12 +24,20 @@
                     <div class="portlet-body form">
                         <div class="form-body">
                             <div class="form-group">
-                                <label class="control-label required">Name</label>
-                                <input type="text" class="form-control" placeholder="Name" name="name">
+                                <label class="control-label required">Email</label>
+                                <input type="text" class="form-control" placeholder="Email" name="email">
                             </div>
                             <div class="form-group">
-                                <label class="control-label required">Value</label>
-                                <input type="text" class="form-control" placeholder="Value" name="value">
+                                <label class="control-label required">Address</label>
+                                <input type="text" class="form-control" placeholder="Address" name="address">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label required">Skype</label>
+                                <input type="text" class="form-control" placeholder="Skype" name="skype">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label required">Phone</label>
+                                <input type="text" class="form-control" placeholder="Phone" name="phone">
                             </div>
                             <div class="form-group">
                                 <label class="control-label required">Logo</label>
